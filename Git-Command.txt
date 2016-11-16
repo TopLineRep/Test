@@ -1,7 +1,6 @@
 ---------------------------------------------
 Git 
 ----------------------------------------------
-//To test in dev
 Download git from Git site https://git-scm.com/downloads,Install Setup with Default options
 git clone 	
 
