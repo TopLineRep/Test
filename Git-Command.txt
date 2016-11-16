@@ -1,0 +1,99 @@
+---------------------------------------------
+Git 
+----------------------------------------------
+Download git from Git site https://git-scm.com/downloads,Install Setup with Default options
+git clone 	
+
+git --version : To check the version
+
+git help <verb>
+git <verb> --help
+
+git config get/set configuration variables that ctrl all Git operations
+
+Three level of config
+	System	: C:\ProgramData\Git\config : --system
+	User	: C:\Users\$USER\.gitconfig : --global
+	repositories : /.git/config :--local
+	To check all 3 values
+		git config --list --show-origin		
+	TO check each level values
+		git config <--{level}> --list
+		
+Set User Identity
+	git config --global user.name "" : Set unique name
+	git config --global user.email "" : unique email to track changes
+Get URL of git server
+	git remote -v
+	git remote show origin : More Info about server
+Cache User credential	
+	git config --global credential.helper cache
+Repository
+    3 Stage
+        > HEAD
+        > Index
+        > work dir
+	2 Approch 
+	> Existing project import to Git
+		Navigate to the directory where you want to maintain 
+		git init : Create .git folder
+	> Clone project from another server
+		git clone [url]
+	Add file to track
+		git add [fileName] [* (for all files)]
+	Check status of the file
+		git status
+	Track changes not yet staged
+		git diff
+	To find merge tool support 	
+		difftool --tool-help 
+	To check what are the staged that goes in next commit		
+		git diff --staged
+	Commit Code
+		git commit -m ""
+		git commit -a -m "" : -a flag includes all changed files
+	View Commit History
+		git log
+		git log --oneline --decorate : branch details
+		git log --oneline --decorate --graph --all
+		
+	Remove Files
+		git rm
+		git rm [-f | --force] [-n] [-r] [--cached] [--ignore-unmatch] [--quiet] [--] <file>…?
+		-n : dry run, its won't remove file just tell how many files are deleted
+		-r : remove sub directory
+		-cached: unstage and remove paths only from the index		
+	Move Files
+		git mv {from-file} {to-file}
+    Revert change
+        1)Revert the full commit
+        git reset --soft HEAD~1 / git reset {commitId} : undo local commit chage will be in unstage
+        git reset --Hard HEAD~1 : undo local commit remove the change from work dir
+        2)  Delete the last commit
+        git reset HEAD^ --hard
+        git push <<remote>> -f
+        
+        git reflog to get untracked commit
+        3) Delete the commit from a list
+        git rebase --continue
+        git push <remote_repo> <remote_branch> -f
+         
+Tag 
+	2 type of tags
+	Lightweight : like branch,just a pointer to a specific commit.
+		git tag v1.4 -m "my version 1.4" : To create tag
+	annotated :  Stored as full objects in the Git database.Don't use for  temporary tag 
+		git tag -a v1.4 -m "my version 1.4" : To create tag
+	Sharing tag git push origin [tagname].
+	CheckOut branch git checkout -b [branchname] [tagname]:
+	git push origin [tagname].
+	Search
+		git tag -l "v1.8.5*"
+
+Branch
+	git branch : List the branch
+	
+	git branch -v : Latest Commit of each branch
+	git branch --merged 
+	git branch --no-merged
+	git branch -d : Delete a branch
