@@ -1,0 +1,11 @@
+https://en.wikibooks.org/wiki/Windows_Programming/Programming_CMD
+@ => prevents command display
+@ECHO OFF /ON => toggle the display for a bat file
+ECHO  => To Display. to state with on/off should user ECHO.ON**/off**
+:: / REM => Comment support only single line
+SET {opt} {var}={val} => create variable and assign value. No space btw assign sign
+	Option:
+	/A => variable as integer
+	/P => get a input value
+ECHO %{var}% => display variable
+
