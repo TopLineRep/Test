@@ -6,6 +6,15 @@ ECHO  => To Display. to state with on/off should user ECHO.ON**/off**
 SET {opt} {var}={val} => create variable and assign value. No space btw assign sign
 	Option:
 	/A => variable as integer
-	/P => get a input value
+	/P => get a input value	
 ECHO %{var}% => display variable
+GOTO {label} :{label} => Jump statement in strcture programming
+IF Statement
+	IF [NOT] EXIST {fileName} command  => File syntex
+	IF [/I] [NOT] item1==item2 command  => string
+	IF [NOT] DEFINED variable command => to check error
+	IF [NOT] ERRORLEVEL number command => to check error
+	
+   
+
 
